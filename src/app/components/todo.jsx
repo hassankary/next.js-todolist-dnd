@@ -13,7 +13,6 @@ export const Todo = () => {
   const [searchResultVal, setSearchResultVal] = searchResult;
 
   const handleDragDrop = (results) => {
-    console.log("This is handle drag", results);
     const { source, destination, type } = results;
 
     if (!destination) return;
@@ -46,20 +45,17 @@ export const Todo = () => {
       setNotFoundVal(false);
       return setSearchResultVal([]);
     }
-    // console.log("searchTitle =>", searchTitle)
     const filterTodo = todosVal.filter((todo) => {
       // return todo.title === searchTitle;
       return todo.title.includes(searchTitle);
     });
-
-    console.log("FILTERTODO =>", filterTodo);
 
     if (!filterTodo.length && searchTitle) {
       setNotFoundVal(true);
     } else {
       setNotFoundVal(false);
     }
-
+    
     setSearchResultVal(filterTodo);
   };
 

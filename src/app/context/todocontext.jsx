@@ -1,15 +1,17 @@
-import { getImgProps } from "next/dist/shared/lib/get-img-props";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const TodoContext = createContext();
 
 export const TodoProvider = (props) => {
-  const getTodos = JSON.parse(localStorage?.getItem("todos"));
-  const [todos, setTodos] = useState(getTodos ? getTodos : []);
+  const [todos, setTodos] = useState([]);
   const [editTodos, setEditTodos] = useState(null);
   const [notFound, setNotFound] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
 
+  useEffect(() => {
+    const getTodos = JSON.parse(localStorage?.getItem("todos"));
+    setTodos(getTodos)
+  }, [])
   
 
   return (

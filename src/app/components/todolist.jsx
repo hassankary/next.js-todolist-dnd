@@ -33,8 +33,8 @@ export const TodoList = () => {
     ));
   }
 
-  return todosVal.length ? (
-    todosVal.map((item, index) => {
+  return todosVal?.length ? (
+    todosVal?.map((item, index) => {
       return (
         <Draggable draggableId={item.id} key={item.id} index={index}>
           {(provided) => (

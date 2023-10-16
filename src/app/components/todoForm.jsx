@@ -26,14 +26,12 @@ export const TodoForm = () => {
       { id: uuidv4(), title: title, subtitle: subtitle, completed: false },
     ];
 
-    console.log("todos ==>", newTodos);
     setTodos(newTodos);
     // setSubTodosVal(newSubtodos);
     setTitle("");
     setSubtitle("");
     setNotFound(false);
   };
-  // console.log("TODOS ==>", todos);
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todosVal));
@@ -57,13 +55,11 @@ export const TodoForm = () => {
       }
       return item;
     });
-    // console.log("filterTodo", filterTodo)
     setTodos(filterTodo);
 
     // // ===================== Cara Pakai Index =======================
     // const tempTodos = [...todos];
     // const indexEdit = todos.findIndex((todo) => todo.id === editTodos.id);
-    // console.log("indexEdit =>", indexEdit);
 
     // if (indexEdit > -1) {
     //   tempTodos[indexEdit] = {
@@ -72,9 +68,6 @@ export const TodoForm = () => {
     //   };
     // }
     // setTodos(tempTodos);
-
-    // console.log("filterTOdo =>", filterTodo);
-    // console.log("editTodos.id =>", editTodos.id);
 
     setTitleModal("");
     setEditTodos(null);

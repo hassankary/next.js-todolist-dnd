@@ -18,7 +18,6 @@ export const TodoCard = ({ key, id, title, subtitle, completed }) => {
       return item;
     });
     setTodosVal(filterTodo);
-    // console.log("filter Todo =>" , filterTodo)
   };
 
   const deleteTodo = (e) => {
@@ -29,9 +28,7 @@ export const TodoCard = ({ key, id, title, subtitle, completed }) => {
   };
 
   const editTodo = (e) => {
-    // console.log("ini event=>", e);
     const filterTodo = todosVal.map((item) => {
-      // console.log("ini item=>", item);
       if (item.id === e.target.id) {
         // set item to editTodos at context, so the other component can use the editTodos context
         setEditTodosVal(item);
@@ -40,10 +37,6 @@ export const TodoCard = ({ key, id, title, subtitle, completed }) => {
     });
     setTodosVal(filterTodo);
   };
-
-  useEffect(() => {
-    console.log("editTodos? ==>", editTodosVal);
-  }, [editTodosVal]);
 
   const isCompleted = completed ? "checked" : "";
 

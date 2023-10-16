@@ -16,7 +16,6 @@ const Home = () => {
   const [pageNumber, setPageNumber] = useState(2);
   const modalRef = useRef();
 
-  console.log("pageNumber ==>", pageNumber);
 
   // const getData = async () => {
   //   const request = await fetch(
@@ -57,28 +56,19 @@ const Home = () => {
     setPageNumber(pageNumber + 1);
 
     setDataUser([...dataUser, ...response]);
-    console.log("fetching...response.results", response);
   };
-
-  console.log("fetching...hasMore", hasMore);
-  // console.log("dataUser.results.length", dataUser.results?.length)
-
-  console.log("dataUser ==>", dataUser);
 
   const deleteCard = (e) => {
     const filterDelete = dataUser.filter((data) => {
       return data.login.uuid !== e.target.id;
     });
     setDataUser(filterDelete);
-    // setSearchResult()
   };
 
   // useEffect to watch dataUser, if someone deleted some cards the searchResult will be updated
   useEffect(() => {
     searchCard();
   }, [dataUser]);
-
-  console.log("detailModal ==>", detailModal);
 
   const detailCard = (e) => {
     dataUser.map((data) => {
@@ -130,7 +120,6 @@ const Home = () => {
       let handler = (e) => {
         if (!modalRef.current?.contains(e.target)) {
           setDetailModal(null);
-          // console.log("modalRef.current", modalRef.current)
         }
       };
 
@@ -188,7 +177,6 @@ const Home = () => {
     if (filterSearch.length !== 0) {
       setSearchResultPage(true);
       setSearchResult(filterSearch);
-      console.log("Search has been found, filtered search ===>", filterSearch);
     }
 
     if (
@@ -196,19 +184,13 @@ const Home = () => {
       searchTitle == undefined ||
       filterSearch.length === 0
     ) {
-      console.log("Search? Not found...");
       setSearchResultPage(false);
     }
-    // console.log("filterSearch =>", filterSearch)
-    // console.log("SearchTitle =>", searchTitle)
   };
 
   const closeSearchResult = () => {
     setSearchResultPage(false);
   };
-
-  console.log("searchResult =>", searchResult);
-  console.log("searchResultPage", searchResultPage);
 
   return (
     <>

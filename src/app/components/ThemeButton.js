@@ -13,8 +13,6 @@ const ThemeButton = () => {
     return null;
   }
 
-  console.log("resolvedTheme ===>", resolvedTheme)
-
 
   return (
     <button
