@@ -65,11 +65,11 @@ export const Todo = () => {
 
   return (
     <>
-      <div className="flex mb-4">
+      <div className="flex pb-4">
         <form className="flex items-center justify-end w-full">
           <div className="flex px-2 space-x-2 w-full">
             <input
-              className="text-black rounded-md px-2 flex-grow"
+              className="text-black rounded-md px-2 w-full"
               type="search"
               placeholder="Search..."
               value={searchTitle}
@@ -84,7 +84,7 @@ export const Todo = () => {
           </div>
         </form>
       </div>
-      <h1 className="text-3xl font-bold mb-4">Todo Application</h1>
+      <h1 className="text-3xl font-bold py-6">Todo Application</h1>
 
       <TodoForm />
       {notFoundVal ? <p>Not Found...</p> : <></>}
@@ -92,7 +92,7 @@ export const Todo = () => {
         <Droppable droppableId="ROOT" type="group">
           {(provided) => (
             <div
-              className="flex flex-col items-start"
+              className="flex flex-col items-start min-h-[500px]"
               {...provided.droppableProps}
               ref={provided.innerRef}
             >

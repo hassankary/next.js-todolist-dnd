@@ -85,11 +85,11 @@ export const TodoForm = () => {
   };
 
   return (
-    <>
+    <div className="py-4">
       <button
         className={` ${
-          createTodo ? "bg-red-500 hover:bg-red-400" : ""
-        } font-bold border-2 px-2 rounded-md border-white mb-4`}
+          createTodo ? "bg-red-500 hover:bg-red-400" : "hover:bg-[#090909] "
+        } font-bold px-4 py-2 bg-black  rounded-md mb-4`}
         onClick={todoModal}
       >
         {createTodo ? "Cancel" : "Create Todo"}
@@ -99,20 +99,20 @@ export const TodoForm = () => {
           <input
             type="text"
             placeholder="Title..."
-            className="w-full border-2 border-white text-black rounded-md px-1 "
+            className="w-full bg-white text-black rounded-md px-1 "
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           ></input>
           <textarea
             type="text"
             placeholder="Description..."
-            className="mt-4 w-full border-2 border-white text-black rounded-md px-1 "
+            className="mt-4 w-full bg-white text-black rounded-md px-1 "
             value={subtitle}
             onChange={(e) => setSubtitle(e.target.value)}
           ></textarea>
           <button
             type="submit"
-            className="mt-6 w-[20%] border-2 border-white px-1 rounded-md text-md"
+            className="mt-6 w-[20%] font-bold bg-black hover:bg-[#090909] py-2 rounded-lg text-md"
             onClick={addTodo}
           >
             Submit
@@ -159,7 +159,7 @@ export const TodoForm = () => {
       ) : (
         ""
       )}
-    </>
+    </div>
   );
 };
 

@@ -42,7 +42,7 @@ export const TodoCard = ({ key, id, title, subtitle, completed }) => {
 
   return (
     <>
-      <div className="flex w-full bg-black bg-opacity-40 p-1 pl-2 justify-between rounded-t-lg">
+      <div className="flex w-full bg-black  p-1 pl-2 justify-between rounded-t-lg">
         <div className="flex space-x-2">
           <input
             className="my-auto"
@@ -56,14 +56,14 @@ export const TodoCard = ({ key, id, title, subtitle, completed }) => {
         </div>
         <div className="flex space-x-1">
           <button
-            className="flex items-center justify-center h-full border-2 border-white px-1 rounded-md bg-red-600 text-xs"
+            className="flex items-center justify-center h-full px-1 rounded-md bg-red-600 text-xs"
             id={id}
             onClick={(e) => editTodo(e)}
           >
             Edit
           </button>
           <button
-            className="flex items-center justify-center h-full border-2 border-white px-1 rounded-md bg-red-600 text-xs"
+            className="flex items-center justify-center h-full px-1 rounded-md bg-red-600 text-xs"
             id={id}
             onClick={(e) => deleteTodo(e)}
           >
@@ -71,7 +71,7 @@ export const TodoCard = ({ key, id, title, subtitle, completed }) => {
           </button>
         </div>
       </div>
-      <div className="p-1 bg-white bg-opacity-20 rounded-b-md">{subtitle}</div>
+      <div className="p-1 bg-gradient-to-r from-[#191919] via-[#131313] to-[#191919] rounded-b-md">{subtitle}</div>
     </>
   );
 };
