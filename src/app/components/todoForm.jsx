@@ -123,7 +123,7 @@ export const TodoForm = () => {
       )}
       {!!editTodosVal ? (
         <div className=" fixed flex w-full inset-0 justify-center items-center bg-black bg-opacity-40 backdrop-blur-sm">
-          <div className="flex flex-col justify-center bg-white p-1 w-[40%] rounded-xl">
+          <div className="flex flex-col justify-center bg-white p-1 md:w-[40%] lg:w-[30%] rounded-xl">
             <div className="flex justify-end">
               <button className=" w-[25px] text-black" onClick={cancelEdit}>
                 x
@@ -133,7 +133,7 @@ export const TodoForm = () => {
               <h1 className="font-bold mb-6 text-xl">Edit?</h1>
               <form className="flex flex-col">
                 <input
-                  className="py-[3px] px-2 w-full border border-black rounded-md"
+                  className="py-[3px] bg-white px-2 w-full border border-black rounded-md"
                   type="text"
                   value={titleModal}
                   onChange={(e) => setTitleModal(e.target.value)}

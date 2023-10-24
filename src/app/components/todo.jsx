@@ -69,7 +69,7 @@ export const Todo = () => {
         <form className="flex items-center justify-end w-full">
           <div className="flex px-2 space-x-2 w-full">
             <input
-              className="text-black rounded-md px-2 w-full"
+              className="text-black bg-white rounded-md px-2 w-full"
               type="search"
               placeholder="Search..."
               value={searchTitle}
