@@ -8,11 +8,11 @@ export const TodoProvider = (props) => {
   const [notFound, setNotFound] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
 
+  const getTodos = JSON.parse(localStorage?.getItem("todos"));
+
   useEffect(() => {
-    const getTodos = JSON.parse(localStorage?.getItem("todos"));
-    setTodos(getTodos)
-  }, [])
-  
+    setTodos(getTodos);
+  }, []);
 
   return (
     <TodoContext.Provider
@@ -21,7 +21,6 @@ export const TodoProvider = (props) => {
         editTodos: [editTodos, setEditTodos],
         notFound: [notFound, setNotFound],
         searchResult: [searchResult, setSearchResult],
-
       }}
     >
       {props.children}
