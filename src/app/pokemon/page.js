@@ -16,7 +16,6 @@ const Home = () => {
   const [pageNumber, setPageNumber] = useState(2);
   const modalRef = useRef();
 
-
   // const getData = async () => {
   //   const request = await fetch(
   //     "https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb?fmt=raw&sole"
@@ -78,7 +77,7 @@ const Home = () => {
       return data;
     });
   };
-  
+
   const Cards = ({ firstName, lastName, gender, id, index }) => {
     return (
       <div className=" flex flex-col hover:scale-[102%] md:text-sm text-xs transition items-center px-1 py-1 bg-white dark:bg-slate-800 text-black dark:text-slate-200 rounded-xl shadow-xl">
@@ -194,6 +193,7 @@ const Home = () => {
 
   return (
     <>
+      <title>Address Book App</title>
       <div className="fixed flex z-10 top-0 bg-gradient-to-bl from-teal-500 to-purple-900 dark:from-slate-900 dark:to-slate-950 dark:text-slate-200 text-black h-[70px] w-full">
         <div className="flex justify-center items-center my-auto w-[45%]">
           <Image src="img/pokemon-logo-bw.svg" width={70} height={70} />
