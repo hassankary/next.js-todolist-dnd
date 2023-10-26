@@ -112,7 +112,7 @@ export const TodoForm = () => {
           ></textarea>
           <button
             type="submit"
-            className="mt-6 w-[20%] font-bold bg-black hover:bg-[#090909] py-2 rounded-lg text-md"
+            className="mt-6 font-bold bg-black hover:bg-[#090909] py-2 px-4 rounded-lg text-md"
             onClick={addTodo}
           >
             Submit
