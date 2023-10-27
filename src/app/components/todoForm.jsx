@@ -34,10 +34,6 @@ export const TodoForm = () => {
   };
 
   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todosVal));
-  }, [todosVal]);
-
-  useEffect(() => {
     // checking for every changes on editTodos.
     // if there are any changes on editTodos, and editTodos.title is exist, just update the title to be editTodos.title
     if (editTodosVal?.title) {
