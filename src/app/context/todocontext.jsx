@@ -11,7 +11,9 @@ export const TodoProvider = (props) => {
 
   useEffect(() => {
     if (window) {
-      const getTodos = JSON.parse(window.localStorage?.getItem("todos"));
+      const getTodos = window.localStorage?.getItem("todos")
+        ? JSON.parse(window.localStorage?.getItem("todos"))
+        : null;
       setTodos(getTodos);
       setIsInitialFetching(false);
     }

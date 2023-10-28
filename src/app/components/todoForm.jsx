@@ -40,7 +40,7 @@ export const TodoForm = () => {
       setTitleModal(editTodosVal.title);
     }
   }, [editTodosVal]);
-
+  
   const editTodo = (e) => {
     e.preventDefault();
 
