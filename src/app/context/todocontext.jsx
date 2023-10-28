@@ -13,7 +13,7 @@ export const TodoProvider = (props) => {
     if (window) {
       const getTodos = window.localStorage?.getItem("todos")
         ? JSON.parse(window.localStorage?.getItem("todos"))
-        : null;
+        : [];
       setTodos(getTodos);
       setIsInitialFetching(false);
     }
